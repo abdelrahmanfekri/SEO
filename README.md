@@ -48,6 +48,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
     - [Logo](https://github.com/abdelrahmanfekri/SEO/blob/main/README.md#logo)
     - [Products](https://github.com/abdelrahmanfekri/SEO/blob/main/README.md#product)
     - [Social Profile](https://github.com/abdelrahmanfekri/SEO/blob/main/README.md#social-profile)
+    - [Article](https://github.com/abdelrahmanfekri/SEO/blob/main/README.md#article)
  
 ## install next-seo
 ```shell
@@ -605,5 +606,40 @@ const Page = () => (
 
 export default Page;
 ```
+### Article
+```js
+import { ArticleJsonLd } from 'next-seo';
 
+const Page = () => (
+  <>
+    <h1>Article JSON-LD</h1>
+    <ArticleJsonLd
+      url="https://example.com/article"
+      title="Article headline"
+      images={[
+        'https://example.com/photos/1x1/photo.jpg',
+        'https://example.com/photos/4x3/photo.jpg',
+        'https://example.com/photos/16x9/photo.jpg',
+      ]}
+      datePublished="2015-02-05T08:00:00+08:00"
+      dateModified="2015-02-05T09:00:00+08:00"
+      authorName={[
+        {
+          name: 'Jane Blogs',
+          url: 'https://example.com',
+        },
+        {
+          name: 'Mary Stone',
+          url: 'https://example.com',
+        },
+      ]}
+      publisherName="Gary Meehan"
+      publisherLogo="https://www.example.com/photos/logo.jpg"
+      description="This is a mighty good description of this article."
+    />
+  </>
+);
+
+export default Page;
+```
 
